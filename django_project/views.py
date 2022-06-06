@@ -1,4 +1,8 @@
-from django.http import HttpResponse
+# from django.http import HttpResponse
+from django.shortcuts import render
 
 def greeting(request):
-   return HttpResponse("Olá, meu nome é Danilo")
+  context = {
+    'greeting': 'Olá! Este é um exemplo do uso de templates. :)'
+  }
+  return render(request, 'greeting.html', context)
