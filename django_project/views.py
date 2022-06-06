@@ -1,10 +1,10 @@
 # from django.http import HttpResponse
 from django.shortcuts import render
-from datetime import datetime
+from django.utils import timezone
 
 def greeting(request):
   context = {
     'greeting': 'Olá! Este é um exemplo do uso de templates. :)',
-    'today': datetime.now()
+    'today': timezone.now()
   }
   return render(request, 'greeting.html', context)
