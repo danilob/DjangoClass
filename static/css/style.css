@@ -1,11 +1,69 @@
 /* https://colorhunt.co/palette/2f8f9d3bacb682dbd8b3e8e5*/
-h1{
+:root{
+  --color-blue-strong: #2F8F9D;
+  --color-blue-light: #3BACB6;
+  --color-blue-green: #82DBD8;
+  --color-blue-gray: #B3E8E5;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  max-width: 700px;
+  width: 80%;
+  margin: 0 auto;
+  color: var(--color-blue-strong);
+  font-size: 1rem;
+}
+
+header > h1{
   text-align: center;
+  margin: 0.625em 0 0;
+  padding: 0.625em;
+  background: var(--color-blue-gray);
+  border-radius: 10px;
 }
 
 p {
-  color: #2F8F9D;
-  background: #B3E8E5;
-  padding: 0.325em;
-  margin: 0;
+  margin-top: 0;
 }
+
+h1 + p {
+  padding: 0.625em;
+  margin: 0;
+  font-size: 0.825rem;
+  text-align: left;
+}
+
+section {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.625em;
+  margin-top: 0;
+  font-size: 0.825rem;
+}
+
+.today{
+  width: 63.5%;
+  font-size: 1rem;
+}
+
+.week {
+  width: 32%;
+  display: flex;
+  align-items: center;
+}
+
+.week > p {
+  background: var(--color-blue-gray);
+  font-size: 0.625rem;
+  margin-bottom: 0;
+  padding: 0.225em 0.425em;
+  border-right: 2px solid white;
+}
+
+.week > .week-today {
+  color: white;
+  font-size: 0.925rem;
+  
+}
+
