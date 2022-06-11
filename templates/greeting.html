@@ -1,31 +1,24 @@
-<!DOCTYPE HTML>
-{% load static %}
-<html>
-<head>
-  <title>Boas Vindas</title>
-  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %} Boas Vindas {% endblock %}
+  
+{% block header %}
   {% include "presentation.html" %}
-  {% if greeting and today %}
-    <h3>{{ greeting }} - {{ today }}</h3>
-  {% elif greeting and not today %}
-    <h3>{{ greeting }}</h3>
-  {% elif not greeting and today %}
-    <h3>{{ today }}</h3>
-  {% else %}
-    <h3>Não informada a data nem boas vindas.</h3>
+  {% if greeting %}
+    <p> {{ greeting }}</p>
   {% endif %}
-  {% now "j \d\e F Y H:i" %}
-  {% for week in week_days %}
+{% endblock %}
+
+{% block time-info %}
+  <div class="today">{{ today|date:'d/m/Y' }}</div>
+  <div class="week">
+    {% for week in week_days %}
     {% if forloop.counter == today.isoweekday %}
-      <p> <strong>{{ week }}</strong></p>
+      <p class="week-today">{{ week }}</p>
     {% else %}
       <p>{{ week }}</p>
     {% endif %}
-  {% empty %}
-    <h3>Não existem informações</h3>
   {% endfor %}
+  </div>
+{% endblock %}
   
-</body>
-</html>
