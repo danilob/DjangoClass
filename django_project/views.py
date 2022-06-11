@@ -11,3 +11,14 @@ def greeting(request):
     'week_days': week_days 
   }
   return render(request, 'greeting.html', context)
+
+
+def about(request):
+  week_days = ['Seg','Ter','Qua','Qui','Sex','Sáb','Dom']
+  context = {
+    'greeting': 'Olá! seja bem vindo!',
+    'today': timezone.now(),
+    'week_days': week_days,
+    'about': "Meu nome é Danilo desenvolvi está página utilizando Django."
+  }
+  return render(request, 'about.html', context)
