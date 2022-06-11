@@ -14,5 +14,15 @@
     <h3>Não informada a data nem boas vindas.</h3>
   {% endif %}
   {% now "j \d\e F Y H:i" %}
+  {% for week in week_days %}
+    {% if forloop.counter == today.isoweekday %}
+      <p> <strong>{{ week }}</strong></p>
+    {% else %}
+      <p>{{ week }}</p>
+    {% endif %}
+  {% empty %}
+    <h3>Não existem informações</h3>
+  {% endfor %}
+  
 </body>
 </html>
