@@ -1,9 +1,12 @@
 <!DOCTYPE HTML>
+{% load static %}
 <html>
 <head>
   <title>Boas Vindas</title>
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
 </head>
 <body>
+  {% include "presentation.html" %}
   {% if greeting and today %}
     <h3>{{ greeting }} - {{ today }}</h3>
   {% elif greeting and not today %}
