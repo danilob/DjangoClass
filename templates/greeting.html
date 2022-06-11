@@ -5,7 +5,7 @@
 {% block header %}
   {% include "presentation.html" %}
   {% if greeting %}
-    <p> {{ greeting }}</p>
+    <p> {{ greeting|title }}</p>
   {% endif %}
 {% endblock %}
 
@@ -14,9 +14,9 @@
   <div class="week">
     {% for week in week_days %}
     {% if forloop.counter == today.isoweekday %}
-      <p class="week-today">{{ week }}</p>
+      <p class="week-today">{{ week|upper }}</p>
     {% else %}
-      <p>{{ week }}</p>
+      <p>{{ week|lower }}</p>
     {% endif %}
   {% endfor %}
   </div>
