@@ -13,7 +13,7 @@ def greeting(request):
   return render(request, 'greeting.html', context)
 
 
-def about(request):
+def view_about(request):
   week_days = ['Seg','Ter','Qua','Qui','Sex','Sáb','Dom']
   context = {
     'greeting': 'Olá! seja bem vindo!',
