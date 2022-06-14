@@ -67,3 +67,12 @@ section {
   
 }
 
+
+.errorlist  li{
+  margin: 0;
+  padding: 0.125rem 0;
+  color: red;
+  font-size: 0.625rem;
+}
+
+
