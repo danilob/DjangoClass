@@ -1,0 +1,17 @@
+{% extends "greeting.html" %}
+
+{% block content %}
+
+<p> <a href="/">Voltar para o início</a></p>
+<div class="dataform">
+    <form action="{% url 'scoreboard:django_form_model' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+{% endblock %}
+
+{% block title %}
+Formulário Django Model
+{% endblock %}

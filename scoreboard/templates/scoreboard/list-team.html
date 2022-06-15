@@ -1,0 +1,18 @@
+{% extends "greeting.html" %}
+
+{% block content %}
+
+<p> <a href="/">Voltar para o início</a></p>
+<div id="list">
+    <ul>
+    {% for team in teams %}
+        <li>Time: {{ team.name }} (Treinador: {{ team.coach }}) - Ações: <a href="{% url 'scoreboard:change_team' team.name %}">Alterar</a> | <a href="{% url 'scoreboard:remove_team' team.name %}">Excluir</a></li>    
+    {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
+
+{% block title %}
+Lista de Times
+{% endblock %}
