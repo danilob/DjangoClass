@@ -1,5 +1,6 @@
 <div class="today">{{ today|date:'d/m/Y' }}</div>
   <div class="week">
+    
     {% for week in week_days %}
     {% if forloop.counter0 == today.weekday %}
       <p class="week-today">{{ week|upper }}</p>
