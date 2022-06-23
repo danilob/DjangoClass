@@ -1,0 +1,19 @@
+{% extends "greeting.html" %}
+
+{% block content %}
+<p> <a href="/">Voltar para o início</a></p>
+<div class="dataform">
+    <form action="{% url 'manual_form' %}" method="POST">
+        {% csrf_token %}
+        <label for="label_name">Seu nome: </label>
+        <input id="id_name" type="text" name="name"><br>
+        <label for="label_dt_nasc">Data de Nascimento: </label>
+        <input id="id_dt_nasc" type="date" name="dt_nasc">
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+{% endblock %}
+
+{% block title %}
+Formulário Manual
+{% endblock %}

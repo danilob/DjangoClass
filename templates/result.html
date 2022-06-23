@@ -1,0 +1,12 @@
+{% extends "greeting.html" %}
+
+{% block content %}
+<p> <a href="/">Voltar para o início</a></p>
+<p>Bem vindo(a), {{ name|upper }} ({{ age }} anos)!</p>
+{% endblock %}
+
+{% block title %}
+Resposta do Formulário Manual
+{% endblock %}
+
+
