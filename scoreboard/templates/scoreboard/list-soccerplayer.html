@@ -1,0 +1,19 @@
+{% extends "greeting.html" %}
+
+{% block content %}
+
+<p> <a href="/">Voltar para o início</a></p>
+<div id="list">
+    <ul>
+    {% for soccerplayer in soccerplayers %}
+        <li>Nome: {{ soccerplayer.name }} ({{ soccerplayer.number }}) - Time: {{ soccerplayer.team.name|upper }}  - Ações: <a href="{% url 'scoreboard:change_soccerplayer' soccerplayer.id %}">Alterar</a> | <a href="{% url 'scoreboard:remove_soccerplayer' soccerplayer.id %}">Excluir</a> </li>    
+    {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
+
+{% block title %}
+Lista de Times
+{% endblock %}
+

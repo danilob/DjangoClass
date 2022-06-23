@@ -1,0 +1,13 @@
+{% extends "greeting.html" %}
+
+{% block content %}
+
+<p> <a href="{% url 'scoreboard:list_team' %}">Voltar para listagem</a></p>
+<div class="dataform">
+    <form action="{% url 'scoreboard:change_team' team.name %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+{% endblock %}

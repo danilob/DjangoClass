@@ -1,0 +1,10 @@
+{% extends "greeting.html" %}
+
+{% block content %}
+<p> <a href="/">Voltar para o início</a></p>
+Foi criado com sucesso uma nova instância de {{ model }}: {{ instance }}.
+{% endblock %}
+
+{% block title %}
+Sucesso Criação de {{ model }}
+{% endblock %}

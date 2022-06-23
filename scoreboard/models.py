@@ -2,10 +2,10 @@ from django.db import models
 
 class Team(models.Model):
     name = models.CharField(max_length=100,primary_key=True)
-    coach = models.CharField(max_length=150,null=True,blank=True,help_text="é o professor do time")
+    coach = models.CharField(max_length=150,null=True,blank=True)
 
     class Meta:
-      ordering = ["coach"]
+      ordering = ["name"]
       verbose_name = "Time"
       verbose_name_plural = "Times"
 
@@ -29,7 +29,7 @@ class SoccerPlayer(models.Model):
     number   = models.IntegerField()
 
     class Meta:
-        ordering = ["name"]
+        ordering = ["number","-team"]
         verbose_name_plural = "SoccerPlayers"
         constraints = [
             models.UniqueConstraint(
